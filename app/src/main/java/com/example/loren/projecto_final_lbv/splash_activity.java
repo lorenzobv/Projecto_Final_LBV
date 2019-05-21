@@ -22,7 +22,7 @@ public class splash_activity extends AppCompatActivity {
 
         new Handler().postDelayed(new Runnable(){
             public void run(){
-                Intent intent = new Intent(splash_activity.this, MainActivity.class);
+                Intent intent = new Intent(splash_activity.this, Login.class);
                 startActivity(intent);
                 finish();
             };

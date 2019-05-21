@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Projecto_Final_LBV</string>
     <string name="action_settings">Settings</string>
+    <string name="login_button_text">LOGIN</string>
+    <string name="password_text">PASSWORD</string>
+    <string name="username_text">USERNAME</string>
+    <string name="name_text">Name</string>
+    <string name="surname_text">Surname</string>
+    <string name="tel_no_text">Telephone Number</string>
+    <string name="email_text">Email Address</string>
+    <string name="register_button_text">REGISTER</string>
+    <string name="register_here_text">Register Here</string>
 </resources>

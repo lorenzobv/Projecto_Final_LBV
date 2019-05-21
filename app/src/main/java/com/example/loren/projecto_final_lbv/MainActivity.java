@@ -1,6 +1,8 @@
 package com.example.loren.projecto_final_lbv;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText idName, idSurname, idTelNo, idEmail, idUsername, idPassword;
+    UserLocalStore userLocalStore;
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -35,7 +40,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+        //tv.setText(stringFromJNI());
+
+        idName = (EditText) findViewById(R.id.idName);
+        idSurname = (EditText) findViewById(R.id.idSurname);
+        idTelNo = (EditText) findViewById(R.id.idTelNo);
+        idEmail = (EditText) findViewById(R.id.idEmail);
+        idUsername = (EditText) findViewById(R.id.idUsername);
+        idPassword = (EditText) findViewById(R.id.idPassword);
+        userLocalStore = new UserLocalStore(this);
     }
 
     @Override
@@ -64,5 +77,22 @@ public class MainActivity extends AppCompatActivity {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI();
+   // public native String stringFromJNI();
+
+    protected void onStart(){
+        super.onStart();
+        if (authenticate() == true){
+            displayUserDetails();
+        }
+    }
+
+    private boolean authenticate(){
+        return userLocalStore.getUserLoggedIn();
+    }
+
+    private void displayUserDetails(){
+        User user = userLocalStore.getLoggedInUser();
+        idName.setText("Welcome" + user.Name);
+        idName.setText(user.Username);
+    }
 }
