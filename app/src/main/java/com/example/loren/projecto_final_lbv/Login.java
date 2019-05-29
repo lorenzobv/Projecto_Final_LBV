@@ -2,6 +2,7 @@ package com.example.loren.projecto_final_lbv;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -34,12 +35,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bLogin:
-                User user = new User(null, null);
-                userLocalStore.storeUserData(user);
-                userLocalStore.setUserLoggedIn(true);
-
+//
+//                String username = idUsername.getText().toString();
+//                String password = idPassword.getText().toString();
+//
+//                User user = new User(username, password);
+//
+//                authenticate(user);
                 startActivity(new Intent(this, MainActivity.class));
-
                 break;
 
             case R.id.bRegisterLink:
@@ -49,5 +52,34 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 break;
 
         }
+    }
+
+    private void authenticate(User user){
+        ServerRequests serverRequests = new ServerRequests(this);
+        serverRequests.fetchUserDataInBackground(user, new GetUserCallback() {
+            @Override
+            public void done(User returnedUser) {
+               if (returnedUser == null){
+                   showErrorMessage();
+               }else{
+                   logUserIn(returnedUser);
+               }
+            }
+        });
+    }
+
+    private void showErrorMessage(){
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Login.this);
+        dialogBuilder.setMessage("Datos de usuario incorrectos");
+        dialogBuilder.setPositiveButton("OK", null);
+        dialogBuilder.show();
+    }
+
+    private void logUserIn(User returnedUser){
+        userLocalStore.storeUserData(returnedUser);
+        userLocalStore.setUserLoggedIn(true);
+
+        startActivity(new Intent(this, MainActivity.class));
+
     }
 }

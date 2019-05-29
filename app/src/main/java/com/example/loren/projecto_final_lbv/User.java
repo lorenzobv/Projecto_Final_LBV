@@ -14,7 +14,7 @@ public class User {
 
     }
 
-    public User (String Username, String Password){
+    public User(String username, String password){
         this.Name = "";
         this.Surname = "";
         this.TelNo = "";

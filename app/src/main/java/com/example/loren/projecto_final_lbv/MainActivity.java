@@ -1,5 +1,6 @@
 package com.example.loren.projecto_final_lbv;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -79,20 +80,22 @@ public class MainActivity extends AppCompatActivity {
      */
    // public native String stringFromJNI();
 
-    protected void onStart(){
-        super.onStart();
-        if (authenticate() == true){
-            displayUserDetails();
-        }
-    }
+//    protected void onStart(){
+//        super.onStart();
+//        if (authenticate() == true){
+//            displayUserDetails();
+//        }else{
+//            startActivity(new Intent(MainActivity.this, Login.class));
+//        }
+//    }
 
-    private boolean authenticate(){
-        return userLocalStore.getUserLoggedIn();
-    }
-
-    private void displayUserDetails(){
-        User user = userLocalStore.getLoggedInUser();
-        idName.setText("Welcome" + user.Name);
-        idName.setText(user.Username);
-    }
+//    private boolean authenticate(){
+//        return userLocalStore.getUserLoggedIn();
+//    }
+//
+//    private void displayUserDetails(){
+//        User user = userLocalStore.getLoggedInUser();
+//        idName.setText("Welcome" + user.Name);
+//        idName.setText(user.Username);
+//    }
 }

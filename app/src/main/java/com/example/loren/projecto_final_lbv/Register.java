@@ -35,18 +35,28 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.bRegister:
 
-                String Name = idName.getText().toString();
-                String Surname = idSurname.getText().toString();
-                String TelNo = idTelNo.getText().toString();
-                String Email = idEmail.getText().toString();
-                String Username = idUsername.getText().toString();
-                String Password = idPassword.getText().toString();
-
-                User registeredData = new User(Name, Surname, TelNo, Email, Username, Password);
-
-                startActivity(new Intent(this, MainActivity.class));
-
+//                String Name = idName.getText().toString();
+//                String Surname = idSurname.getText().toString();
+//                String TelNo = idTelNo.getText().toString();
+//                String Email = idEmail.getText().toString();
+//                String Username = idUsername.getText().toString();
+//                String Password = idPassword.getText().toString();
+//
+//                User user = new User(Name, Surname, TelNo, Email, Username, Password);
+//
+//                registeredUser(user);
+                startActivity(new Intent(Register.this, Login.class));
                 break;
         }
     }
+
+//    private void registeredUser(User user){
+//        ServerRequests serverRequests = new ServerRequests(this);
+//        serverRequests.storeUserDataInBackground(user, new GetUserCallback() {
+//            @Override
+//            public void done(User returnedUser) {
+//                startActivity(new Intent(Register.this, Login.class));
+//            }
+//        });
+//    }
 }
