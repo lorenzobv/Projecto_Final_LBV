@@ -27,28 +27,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this, User_Profile.class);
+                startActivity(intent);
             }
         });
 
-        // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-        //tv.setText(stringFromJNI());
 
-        idName = (EditText) findViewById(R.id.idName);
-        idSurname = (EditText) findViewById(R.id.idSurname);
-        idTelNo = (EditText) findViewById(R.id.idTelNo);
-        idEmail = (EditText) findViewById(R.id.idEmail);
-        idUsername = (EditText) findViewById(R.id.idUsername);
-        idPassword = (EditText) findViewById(R.id.idPassword);
+        idName = findViewById(R.id.idName);
+        idSurname = findViewById(R.id.idSurname);
+        idTelNo = findViewById(R.id.idTelNo);
+        idEmail = findViewById(R.id.idEmail);
+        idUsername = findViewById(R.id.idUsername);
+        idPassword = findViewById(R.id.idPassword);
         userLocalStore = new UserLocalStore(this);
     }
 
