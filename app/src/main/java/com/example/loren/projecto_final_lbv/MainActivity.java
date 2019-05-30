@@ -95,4 +95,5 @@ public class MainActivity extends AppCompatActivity {
 //        idName.setText("Welcome" + user.Name);
 //        idName.setText(user.Username);
 //    }
+
 }

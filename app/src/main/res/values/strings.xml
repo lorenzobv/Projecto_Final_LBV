@@ -12,4 +12,14 @@
     <string name="register_here_text">Register Here</string>
     <string name="Save_button">SAVE</string>
     <string name="cancel_button">CANCEL</string>
+    <string name="close_session">Close session</string>
+    <string name="Copyright">Copyright</string>
+    <string name="contact">Contact</string>
+
+    <array name="Options_images">
+        <item>@drawable/netflix_logo</item>
+        <item>@drawable/maps</item>
+        <item>@drawable/settings</item>
+        <item>@drawable/spotify</item>
+    </array>
 </resources>
