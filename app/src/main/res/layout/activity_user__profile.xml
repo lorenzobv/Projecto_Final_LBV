@@ -5,13 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".User_Profile">
+    tools:context=".User_Profile"
+    android:background="@drawable/background">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/name_text" />
+        android:text="@string/name_text"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/idName"
@@ -22,7 +25,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/surname_text" />
+        android:text="@string/surname_text"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/idSurname"
@@ -33,7 +37,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tel_no_text" />
+        android:text="@string/tel_no_text"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/idTelNo"
@@ -44,7 +49,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email_text" />
+        android:text="@string/email_text"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/idEmail"
@@ -55,7 +61,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/username_text" />
+        android:text="@string/username_text"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/idUsername"
@@ -66,7 +73,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password_text" />
+        android:text="@string/password_text"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/idPassword"
@@ -78,11 +86,15 @@
         android:id="@+id/bSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Save_button" />
+        android:text="@string/Save_button"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/bCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cancel_button" />
+        android:text="@string/cancel_button"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 </LinearLayout>
